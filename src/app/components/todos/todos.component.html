@@ -1,0 +1,27 @@
+<ul class="list bg-base-100 rounded-box shadow-md">
+  @for ( todo of todos; track todo.id) {
+
+  <li class="list-row">
+    <div class="text-4xl font-thin opacity-30 tabular-nums">{{ todo.id }}</div>
+    <div>
+      <img
+        class="size-10 rounded-box"
+        src="https://img.daisyui.com/images/profile/demo/1@94.webp"
+      />
+    </div>
+    <div class="list-col-grow">
+      <a
+        [href]="'/todo/' + todo.id"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:underline text-primary"
+        [attr.aria-label]="'Voir les détails de todo ' + todo.id"
+      >
+        {{ todo.title }}
+      </a>
+    </div>
+  </li>
+  }@empty {
+  <li aria-hidden="true">There are no items.</li>
+  }
+</ul>

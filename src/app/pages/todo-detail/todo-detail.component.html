@@ -1,0 +1,32 @@
+@if (todo) {
+<div class="card bg-base-100 shadow-xl p-4">
+  <div class="card-body">
+    <h2 class="card-title text-xl font-bold text-primary">
+      {{ todo.title }}
+    </h2>
+
+    <p class="text-sm text-gray-500">
+      <span class="font-semibold">ID :</span> {{ todo.id }}
+    </p>
+
+    <p class="text-sm">
+      <span class="font-semibold">Complété :</span>
+      <span
+        class="badge ml-2"
+        [ngClass]="todo.completed ? 'badge-success' : 'badge-error'"
+      >
+        {{ todo.completed ? "Oui" : "Non" }}
+      </span>
+    </p>
+  </div>
+</div>
+}
+
+<!-- 
+Version antérieure à 19
+
+<div *ngIf="todo">
+  <h2>{{ todo.title }}</h2>
+  <p>ID: {{ todo.id }}</p>
+  <p>Complété : {{ todo.completed ? "Oui" : "Non" }}</p>
+</div> -->

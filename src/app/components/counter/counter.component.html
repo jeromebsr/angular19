@@ -1,0 +1,16 @@
+<div class="p-4 rounded shadow bg-base-200">
+  <h2 class="text-xl font-bold mb-4">Compteur Angular 🔢</h2>
+
+  <div class="flex gap-4 items-center mb-4">
+    <button class="btn btn-error" (click)="decrement()">-</button>
+    <span class="text-lg">{{ count }}</span>
+    <button class="btn btn-success" (click)="increment()">+</button>
+  </div>
+
+  <div *ngIf="fetchedData; else loading">
+    <p>{{ fetchedData }}</p>
+  </div>
+  <ng-template #loading>
+    <p class="italic text-sm text-gray-500">Chargement des données...</p>
+  </ng-template>
+</div>
